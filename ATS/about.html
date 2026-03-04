@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Anderson's Tech Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html" aria-label="Go to home">
+                <img src="images/andersons-tech-solutions-logo.webp" alt="Anderson's Tech Solutions logo">
+            </a>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-links" id="site-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="nav-cta">Book Service</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container split">
+                <div>
+                    <span class="pill">Locally Owned and Operated</span>
+                    <h1>About Anderson's Tech Solutions</h1>
+                    <p class="section-copy">Welcome to Anderson's Tech Solutions, your trusted local electronics repair service in Oak Grove, Missouri. We repair PCs, laptops, gaming consoles, and mobile devices with fast, reliable service.</p>
+                    <p class="quote-box">"Connections between people are one of the most important aspects of life, and technology is the platform on which they rely."</p>
+                </div>
+                <div class="hero-media">
+                    <img src="images/oakgrove.webp" alt="Oak Grove community">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container services-grid">
+                <article class="card">
+                    <h3><i class="fa-solid fa-house" style="color:#26C2B1;"></i> Est. 2025</h3>
+                    <p>We are excited to serve our community as a new local business with personalized support.</p>
+                </article>
+                <article class="card">
+                    <h3><i class="fa-solid fa-stethoscope" style="color:#26C2B1;"></i> FREE Diagnostics</h3>
+                    <p>Diagnostics are free for new customers during our launch promotion.</p>
+                </article>
+                <article class="card">
+                    <h3><i class="fa-solid fa-bolt" style="color:#26C2B1;"></i> 1–3 Day Turnaround</h3>
+                    <p>Most repairs are completed in 1 to 3 business days, depending on complexity.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">FAQ</h2>
+                <p class="section-copy">More questions? Send us an email anytime.</p>
+                <div class="faq-list">
+                    <article class="faq-item">
+                        <button class="faq-question" type="button">How much is it to get a problem diagnosed? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Diagnostics on average are about $50 but are currently free for new customers with our promotion.</p></div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" type="button">What devices do you repair? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>We repair PCs, laptops, gaming consoles, mobile devices, and custom-built computers. If it's tech, we can fix it.</p></div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" type="button">Do you offer on-site repairs? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Yes. We come to you for diagnostics, repairs, and device pick-up/drop-off.</p></div>
+                    </article>
+                    <article class="faq-item">
+                        <button class="faq-question" type="button">How long do repairs typically take? <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="faq-answer"><p>Most repairs are completed within 1 to 3 business days. We keep you updated on timing.</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="images/andersons-tech-solutions-logo2.webp" alt="Anderson's Tech Solutions logo">
+                <p>Locally owned and operated in Oak Grove, Missouri. We help keep your devices running like new.</p>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Electronic Repair</a></li>
+                    <li><a href="services.html">Custom PC Building</a></li>
+                    <li><a href="services.html">On-site Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Nextdoor</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <p><span class="contact-label">Phone:</span><br><span class="contact-value">+1 (816) 705-9693</span></p>
+                <p><span class="contact-label">Email:</span><br><span class="contact-value">andrew@andersonstechsolutions.com</span></p>
+                <p><span class="contact-label">Location:</span><br><span class="contact-value">Oak Grove, MO</span></p>
+            </div>
+        </div>
+        <div class="container footer-bottom">© 2026 Anderson's Tech Solutions. All rights reserved.</div>
+    </footer>
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('#site-nav');
+            const header = document.querySelector('.site-header');
+            let lastY = 0;
+
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            const current = window.location.pathname.split('/').pop() || 'index.html';
+            nav.querySelectorAll('a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === current) link.classList.add('active');
+            });
+
+            window.addEventListener('scroll', () => {
+                const y = window.scrollY || document.documentElement.scrollTop;
+                if (y > lastY && y > 120) header.classList.add('is-hidden');
+                else header.classList.remove('is-hidden');
+                lastY = y <= 0 ? 0 : y;
+            });
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const button = item.querySelector('.faq-question');
+                button.addEventListener('click', () => item.classList.toggle('active'));
+            });
+        })();
+    </script>
+</body>
+</html>
