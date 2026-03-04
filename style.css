@@ -2,10 +2,12 @@
     --gray-900: #0b0f1a;
     --gray-800: #1e293b;
     --gray-400: #94a3b8;
-    --teal: #14b8a6;
-    --teal-glow: rgba(20, 184, 166, 0.3);
+    --teal: #14C1A8;
+    --teal-dark: #0d9488;
+    --teal-glow: rgba(20, 193, 168, 0.3);
     --white: #ffffff;
     --bg-light: #f1f5f9;
+    --mobile-menu-bg: #0b111a;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -17,7 +19,7 @@ html {
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--white);
     color: var(--gray-900);
     line-height: 1.5;
@@ -82,6 +84,12 @@ body::-webkit-scrollbar {
     color: white !important;
     padding: 10px 20px;
     border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    box-shadow: 0 0 15px rgba(20, 193, 168, 0.4);
+    transform: translateY(-1px);
 }
 
 /* HERO BADGE */
@@ -106,40 +114,40 @@ body::-webkit-scrollbar {
 
 .btn-primary, .btn-secondary {
     padding: 16px 32px;
-    border-radius: 16px;
+    border-radius: 12px;
     font-weight: 700;
     font-size: 15px;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
 
 .btn-primary {
     background: var(--teal);
-    color: white;
+    color: var(--gray-900);
     border: 2px solid var(--teal);
 }
 
 .btn-primary:hover {
-    background: #0fa896;
-    border-color: #0fa896;
+    background: var(--teal-dark);
+    border-color: var(--teal-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 10px 30px var(--teal-glow);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--gray-900);
-    border: 2px solid var(--gray-900);
+    border: 2px solid var(--teal);
 }
 
 .btn-secondary:hover {
-    background: var(--gray-900);
-    color: white;
+    background: var(--teal);
+    color: var(--gray-900);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(11, 15, 26, 0.15);
+    box-shadow: 0 10px 30px var(--teal-glow);
 }
 
 /* PRICE GUARANTEE CARD */
@@ -257,7 +265,7 @@ body::-webkit-scrollbar {
 }
 
 /* TIPOGRAFIA DI IMPATTO */
-h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -2px; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -2px; }
 .text-teal { color: var(--teal); }
 
 /* LAYOUT ASIMMETRICO (La Gerarchia Visiva) */
@@ -304,6 +312,18 @@ section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
     border-radius: 30px;
     overflow: hidden;
     position: relative;
+}
+
+.img-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(11, 17, 26, 0.4) 0%, rgba(11, 17, 26, 0.2) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .img-box img {
@@ -614,9 +634,9 @@ section { padding: 120px 20px; max-width: 1200px; margin: 0 auto; }
 footer {
     background: var(--gray-900);
     color: white;
-    padding: 60px 20px 30px;
-    margin-top: 100px;
-    border-top: 1px solid rgba(20, 184, 166, 0.2);
+    padding: 80px 20px 30px;
+    margin-top: 120px;
+    border-top: 1px solid rgba(20, 193, 168, 0.2);
 }
 
 footer .footer-container {
@@ -656,8 +676,8 @@ footer .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
 }
 
 footer .footer-logo {
@@ -689,7 +709,8 @@ footer .footer-social .social-link {
 }
 
 footer .footer-social .social-link:hover {
-    color: var(--teal);
+    color: #14C1A8;
+    transition: all 0.3s ease;
 }
 
 footer .footer-social svg {
@@ -792,16 +813,13 @@ footer .footer-container > div:not(:first-child) p strong {
         width: 100dvw;
         height: 100vh;
         height: 100dvh;
-        background:
-            linear-gradient(180deg, rgba(2, 8, 22, 0.98) 0%, rgba(2, 8, 22, 0.97) 55%, rgba(2, 8, 22, 0.96) 100%),
-            url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=1200') center bottom / cover no-repeat;
-        backdrop-filter: blur(20px);
+        background: #0b111a;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 40px;
-        padding: 80px 32px 60px;
+        gap: 32px;
+        padding: 80px 32px 80px;
         transform: translateX(110%);
         opacity: 0;
         visibility: hidden;
@@ -822,15 +840,14 @@ footer .footer-container > div:not(:first-child) p strong {
     
     .nav-links a {
         color: white;
-        font-size: 3rem;
-        font-weight: 800;
+        font-size: 2.5rem;
+        font-weight: 600;
         margin: 0;
-        padding: 20px 16px;
-        min-height: 64px;
+        padding: 16px 20px;
+        min-height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
         transition: transform 0.2s ease, color 0.2s ease;
     }
 
@@ -839,14 +856,20 @@ footer .footer-container > div:not(:first-child) p strong {
     }
 
     .nav-links a.active:not(.btn-cta) {
-        color: var(--teal);
+        color: #14C1A8;
         text-decoration: underline;
-        text-underline-offset: 8px;
+        text-underline-offset: 10px;
         text-decoration-thickness: 3px;
     }
-32px;
-        margin-top: 48px;
-        padding: 24px 0;
+
+    .mobile-social {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+        padding: 20px 0;
     }
 
     .social-link {
@@ -855,8 +878,8 @@ footer .footer-container > div:not(:first-child) p strong {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 56px;
-        height: 56px;
+        width: 52px;
+        height: 52px;
         transition: transform 0.2s ease, color 0.2s ease;
     }
 
@@ -865,43 +888,38 @@ footer .footer-container > div:not(:first-child) p strong {
     }
 
     .social-link svg {
-        width: 40px;
-        height: 40px;
-        stroke-width: 1.8;
+        width: 32px;
+        height: 32px;
+        stroke-width: 2;
     }
 
     .social-link:hover {
-        color: var(--teal);
+        color: #14C1A8;
     }
 
     .mobile-menu-copy {
-        color: rgba(255, 255, 255, 0.45);
-        font-size: 1rem;
-        margin-top: 32px;
-        padding: 22px 28px !important;
-        width: min(360px, 90%);
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.9rem;
+        margin-top: 40px;
+        padding: 16px 0;
+    }
+    
+    .btn-cta {
+        background: var(--teal);
+        color: var(--gray-900) !important;
+        border-radius: 12px;
+        padding: 20px 28px !important;
+        width: min(500px, 92%);
         font-size: 1.1rem !important;
-        font-weight: 800;
-        margin-top: 24px;
+        font-weight: 700;
+        margin-top: 20px;
         min-height: 64px;
         transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .btn-cta:active {
         transform: scale(0.96);
-        background: #0d9488
-        margin-top: 2px;
-    }
-    
-    .btn-cta {
-        background: var(--teal);
-        color: var(--gray-900) !important;
-        border-radius: 22px;
-        padding: 18px 24px !important;
-        width: min(340px, 88%);
-        font-size: 1.1rem !important;
-        font-weight: 800;
-        margin-top: 12px;
+        background: var(--teal-dark);
     }
     
     /* TAP TARGETS OTTIMIZZATI (Footer) */
@@ -914,7 +932,7 @@ footer .footer-container > div:not(:first-child) p strong {
     
     /* SECTIONS PADDING */
     section {
-        padding: 60px 15px !important;
+        padding: 80px 15px 60px !important;
     }
     
     /* TYPOGRAPHY MOBILE */
@@ -934,7 +952,7 @@ footer .footer-container > div:not(:first-child) p strong {
     .hero-grid { 
         grid-template-columns: 1fr; 
         gap: 40px;
-        padding-top: 100px !important;
+        padding-top: 130px !important;
     }
     
     .img-box {
@@ -1051,7 +1069,7 @@ footer .footer-container > div:not(:first-child) p strong {
 
     /* HOME PAGE - mobile fine tuning */
     .home-page .hero-grid {
-        padding-top: 90px !important;
+        padding-top: 120px !important;
         gap: 24px;
     }
 
